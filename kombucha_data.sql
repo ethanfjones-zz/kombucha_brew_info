@@ -1,35 +1,3 @@
-# Create table relating to time of intial time and final time
-INSERT INTO batch_info(
-  batch_id,  
-  intial_batch_date,  
-  final_batch_date )
-VALUES 
-(1, 
- "2017-10-23", 
- "2017-11-1"), 
-(2, 
- "2017-11-1", 
- "2017-16-1"), 
-(3, 
- "2017-11-16", 
- "2017-11-27"),
-(4,
- '2017-11-28',
- "2017-12-09"),
-(5, 
- "2017-12-9", 
- '2017-12-12'),
-(6, 
- "2017-12-12", 
- "2017-12-20"),
-(7, 
- "2017-12-20", 
- "2017-12-30"), 
-(8, 
- "2017-12-30", 
- "2018-01-08");
-        
-
 # Data for fermentations
 INSERT INTO fermentation(
   batch_id, 
@@ -88,6 +56,37 @@ VALUES
   NULL, 
   "Followed instructions that came with kit for birthday");
 
+# Create table relating to time of intial time and final time
+INSERT INTO batch_info(
+  batch_id,  
+  intial_batch_date,  
+  final_batch_date )
+VALUES 
+(1, 
+ "2017-10-23", 
+ "2017-11-1"), 
+(2, 
+ "2017-11-1", 
+ "2017-16-1"), 
+(3, 
+ "2017-11-16", 
+ "2017-11-27"),
+(4,
+ '2017-11-28',
+ "2017-12-09"),
+(5, 
+ "2017-12-9", 
+ '2017-12-12'),
+(6, 
+ "2017-12-12", 
+ "2017-12-20"),
+(7, 
+ "2017-12-20", 
+ "2017-12-30"), 
+(8, 
+ "2017-12-30", 
+ "2018-01-08");
+        
 
 # Data for tea brewing 
 INSERT INTO tea_brew_info(
@@ -235,7 +234,6 @@ VALUES
  "SCOBY I made from bottle of GT orginal.", 
  "Homemade");
   
-
 
 # Data for daily temp 
 Insert INTO daily_temperatures( 
@@ -492,7 +490,6 @@ VALUES
   NULL,
   NULL, 
   "Day 9 -- Last brew with first SCOBY. Going to dehydrate it.");
-
 
 
 # Data realting to post fermentation and flavoring process
