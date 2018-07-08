@@ -1,61 +1,50 @@
-# Data for fermentations
-INSERT INTO fermentation(
-  batch_id, 
-  initial_ph,
-  intial_temp, 
-  SCOBY_id,
-  start_liquid_amount, 
-  misc_notes)
+# Data Tea 
+INSERT INTO tea_info(
+  tea_id, 
+  tea_name ,  
+  tea_description,
+  purchased_from,
+  organic )
 VALUES 
-( 1,
-  3.9,
-  76,
-  1, 
-  NULL, 
-  "Followed instructions that came with kit for birthday"),
-( 2,
-  3.75,
-  82,
-  1, 
-  NULL, 
-  NULL),
-( 3,
-  3.0,
-  75.5,
-  1, 
-  NULL, 
-  "Smaller then normal vessel. Wanted to decrease clean up time."),
-( 4,
-  3.5,
-  79.5,
-  1, 
-  NULL, 
-  NULL),
-( 5,
-  3.25,
-  75.5,
-  1, 
-  1.5, 
- "Wine batch"),
-( 6,
-  3.25,
-  88.0,
-  1, 
-  NULL, 
-  NULL),
-( 7,
-  3.25,
-  79.5,
-  1, 
-  1.5, 
-  "SCOBY was at very top of vessel. Not any room to spread out and/or breath"),
-( 8,
-  3.75,
-  76.0,
-  1, 
-  NULL, 
-  "Followed instructions that came with kit for birthday");
+(1, 
+ "Orginal Tea Blend", 
+ "Organic Ceylon & Oolong Tea",
+ "The Kombucha Shop",  
+ "Yes"), 
+(2, 
+ "Darjeeling", 
+ "Fruity, floral, astringent. Champagne of Tea", 
+ "VAHDAM", 
+ "Yes"), 
+(3, 
+ "Earl Grey", 
+ "Black tea flavoured with bergamot", 
+ "Wegmans", 
+ "Yes"),
+(4, 
+ "Assam", 
+ "Body, briskness, malty flavour, and strong, bright colour", 
+ "Wegmans", 
+ "Yes"),
+(5, 
+ "Irish Breakfast", 
+ "Robust, malty flavor with reddish color", 
+ "Wegmans", 
+ "Yes");
 
+# Data for SCOBY
+INSERT INTO SCOBY_info(
+  SCOBY_id , 
+  SCOBY_description,
+  SCOBY_source)
+VALUES 
+(1, 
+ "SCOBY I received from kit for birthday 2017", 
+ "The Kombucha Shop"),
+(2, 
+ "SCOBY I made from bottle of GT orginal.", 
+ "Homemade");
+  
 # Create table relating to time of intial time and final time
 INSERT INTO batch_info(
   batch_id,  
@@ -85,7 +74,10 @@ VALUES
  "2017-12-30"), 
 (8, 
  "2017-12-30", 
- "2018-01-08");
+ "2018-01-08"),
+(9, 
+ "2018-06-20", 
+ "2018-07-02");
         
 
 # Data for tea brewing 
@@ -189,51 +181,83 @@ VALUES
   .75, 
   .41, 
   5, 
-  8);
+  8), 
+( 9, 
+  8, 
+  208.0,
+  113.0, 
+  5, 
+  NULL, 
+  18,
+  1.5, 
+  338, 
+  5, 
+  16);
 
-
-# Data Tea 
-INSERT INTO tea_info(
-  tea_id, 
-  tea_name ,  
-  tea_description,
-  purchased_from,
-  organic )
+# Data for fermentations
+INSERT INTO fermentation(
+  batch_id, 
+  initial_ph,
+  intial_temp, 
+  SCOBY_id,
+  start_liquid_amount, 
+  misc_notes)
 VALUES 
-(1, 
- "Orginal Tea Blend", 
- "Organic Ceylon & Oolong Tea",
- "The Kombucha Shop",  
- "Yes"), 
-(2, 
- "Darjeeling", 
- "Fruity, floral, astringent. Champagne of Tea", 
- "VAHDAM", 
- "Yes"), 
-(3, 
- "Earl Grey", 
- "Black tea flavoured with bergamot", 
- "Wegmans", 
- "Yes"),
-(4, 
- "Assam", 
- "Body, briskness, malty flavour, and strong, bright colour", 
- "Wegmans", 
- "Yes"); 
+( 1,
+  3.9,
+  76,
+  1, 
+  NULL, 
+  "Followed instructions that came with kit for birthday"),
+( 2,
+  3.75,
+  82,
+  1, 
+  NULL, 
+  NULL),
+( 3,
+  3.0,
+  75.5,
+  1, 
+  NULL, 
+  "Smaller then normal vessel. Wanted to decrease clean up time."),
+( 4,
+  3.5,
+  79.5,
+  1, 
+  NULL, 
+  NULL),
+( 5,
+  3.25,
+  75.5,
+  1, 
+  1.5, 
+ "Wine batch"),
+( 6,
+  3.25,
+  88.0,
+  1, 
+  NULL, 
+  NULL),
+( 7,
+  3.25,
+  79.5,
+  1, 
+  1.5, 
+  "SCOBY was at very top of vessel. Not any room to spread out and/or breath"),
+( 8,
+  3.75,
+  76.0,
+  1, 
+  NULL, 
+  NULL),
+( 9,
+  3.75,
+  84.0,
+  2, 
+  3.0, 
+  "First batch with homemade SCOBY");
 
-# Data for SCOBY
-INSERT INTO SCOBY_info(
-  SCOBY_id , 
-  SCOBY_description,
-  SCOBY_source)
-VALUES 
-(1, 
- "SCOBY I received from kit for birthday 2017", 
- "The Kombucha Shop"),
-(2, 
- "SCOBY I made from bottle of GT orginal.", 
- "Homemade");
-  
 
 # Data for daily temp 
 Insert INTO daily_temperatures( 
@@ -489,8 +513,35 @@ VALUES
   NULL,
   NULL,
   NULL, 
-  "Day 9 -- Last brew with first SCOBY. Going to dehydrate it.");
-
+  "Day 9 -- Last brew with first SCOBY. Going to dehydrate it."), 
+(9,
+  NULL,
+  75.0,
+  76.0,
+  77.0, 
+  77.0,
+  78.0,
+  77.0,
+  75.0,
+  69.0,
+  75.0, 
+  77.0,
+  77.0,
+  75.0,
+  78.0,
+  78.0,
+  79.0, 
+  76.0,
+  81.0,
+  77.0,
+  79.0,
+  77.0,
+  NULL, 
+  NULL,
+  NULL,
+  NULL,
+  NULL, 
+  "Day 8 -- Bland. Not big bite. Let sit longer. Day 10 -- Right mixture of sweet, tart. ");
 
 # Data realting to post fermentation and flavoring process
 INSERT INTO post_fermentation (
@@ -530,4 +581,8 @@ VALUES
 (8,
  "Plain", 
  NULL, 
- NULL);
+ NULL), 
+(9,
+ "Love Potion 99 without lavender. 117 g smashed blueberries, 15 g rose petals.", 
+ 3, 
+ "Really pudgent. Not as flavorful as desired. Hit of flower at end, but not mush sweetness. Should have smashed berries seperatly");

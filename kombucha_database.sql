@@ -1,17 +1,17 @@
-BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS tea_info(
+  tea_id INTEGER PRIMARY KEY NOT NULL, 
+  tea_name text,  
+  tea_description text,
+  purchased_from text,
+  organic text,
+  FOREIGN KEY (tea_id) REFERENCES tea_brew_info(tea_id)
+  ON DELETE RESTRICT ON UPDATE RESTRICT);
 
-
-PRAGMA foreign_keys = ON 
-
-CREATE TABLE IF NOT EXISTS fermentation(
-  batch_id INTEGER PRIMARY KEY NOT NULL, 
-  initial_ph REAL,
-  intial_temp REAL, 
-  SCOBY_id INTEGER,
-  start_liquid_amount REAL, 
-  misc_notes VARCHAR);
-
-
+CREATE TABLE IF NOT EXISTS SCOBY_info(
+  SCOBY_id INTEGER PRIMARY KEY NOT NULL, 
+  SCOBY_description text,
+  SCOBY_source text,
+  FOREIGN KEY (SCOBY_id) REFERENCES fermentation(SCOBY_id)); 
 
 CREATE TABLE IF NOT EXISTS batch_info(
   batch_id INTEGER PRIMARY KEY NOT NULL, 
@@ -19,7 +19,6 @@ CREATE TABLE IF NOT EXISTS batch_info(
   final_batch_date datetime,
   FOREIGN KEY (batch_id) REFERENCES fermentation(batch_id)
     ON DELETE RESTRICT ON UPDATE RESTRICT);
-
 
 CREATE TABLE IF NOT EXISTS tea_brew_info(
   batch_id INTEGER PRIMARY KEY NOT NULL, 
@@ -36,25 +35,13 @@ CREATE TABLE IF NOT EXISTS tea_brew_info(
   FOREIGN KEY (batch_id) REFERENCES fermentation(batch_id) 
   ON DELETE RESTRICT ON UPDATE RESTRICT);
 
-
-
-CREATE TABLE IF NOT EXISTS tea_info(
-  tea_id INTEGER PRIMARY KEY NOT NULL, 
-  tea_name text,  
-  tea_description text,
-  purchased_from text,
-  organic text,
-  FOREIGN KEY (tea_id) REFERENCES tea_brew_info(tea_id)
-  ON DELETE RESTRICT ON UPDATE RESTRICT);
-
-
-CREATE TABLE IF NOT EXISTS SCOBY_info(
-  SCOBY_id INTEGER PRIMARY KEY NOT NULL, 
-  SCOBY_description text,
-  SCOBY_source text,
-  FOREIGN KEY (SCOBY_id) REFERENCES fermentation(SCOBY_id)); 
-
-
+CREATE TABLE IF NOT EXISTS fermentation(
+  batch_id INTEGER PRIMARY KEY NOT NULL, 
+  initial_ph REAL,
+  intial_temp REAL, 
+  SCOBY_id INTEGER,
+  start_liquid_amount REAL, 
+  misc_notes VARCHAR);
 
 CREATE TABLE IF NOT EXISTS daily_temperatures( 
   batch_id INTEGER NOT NULL, 
@@ -92,6 +79,4 @@ CREATE TABLE IF NOT EXISTS post_fermentation (
   flavorings text, 
   second_fermentation_length REAL, 
   taste_notes text, 
-  FOREIGN KEY (batch_id) REFERENCES fermentation(batch_id);
-
-COMMIT;
+  FOREIGN KEY (batch_id) REFERENCES fermentation(batch_id));
