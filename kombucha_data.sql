@@ -77,7 +77,7 @@ VALUES
  "2018-01-08"),
 (9, 
  "2018-06-20", 
- "2018-07-02")
+ "2018-07-02"),
 (10,
  "2018-07-02",
  "2018-07-16");
@@ -195,7 +195,7 @@ VALUES
   1.5, 
   338, 
   5, 
-  16)
+  16),
 ( 10, 
   8, 
   200,
@@ -270,7 +270,7 @@ VALUES
   84.0,
   2, 
   3.0, 
-  "First batch with homemade SCOBY")
+  "First batch with homemade SCOBY"),
 ( 10, 
   3.0,
   NULL, 
@@ -366,7 +366,7 @@ VALUES
   NULL,
   NULL,
   NULL,
-  NULL,NULL
+  NULL,
   NULL,
   NULL, 
   "Day 8 -- Leaving another day becuase it was not tart enough."), 
@@ -719,9 +719,10 @@ VALUES
   NULL,
   NULL, 
   NULL,
-  NULL, 
-  "Day 8 -- Bland. Not big bite. Let sit longer. Day 10 -- Right mixture of sweet, tart. ")
-( 10, 
+  NULL,
+  NULL,
+  "Day 8 -- Bland. Not big bite. Let sit longer. Day 10 -- Right mixture of sweet, tart. "),
+(10, 
   77.0,
   76.0,
   76.0,
@@ -808,7 +809,7 @@ VALUES
 (9,
  "Love Potion 99 without lavender. 117 g smashed blueberries, 15 g rose petals.", 
  3, 
- "Really pudgent. Not as flavorful as desired. Hit of flower at end, but not mush sweetness. Should have smashed berries seperatly")
+ "Really pudgent. Not as flavorful as desired. Hit of flower at end, but not mush sweetness. Should have smashed berries seperatly"),
 (10,
   "1.5 L plain. 1 Gallon w/ 1/2 C cucumber, 2 TBSP jalapeno. Both ingredients put in food processor", 
   4, 
